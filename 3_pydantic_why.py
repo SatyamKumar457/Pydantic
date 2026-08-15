@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List,Dict
+from typing import List,Dict,Optional
 
 class Patient(BaseModel):
 
@@ -7,7 +7,7 @@ class Patient(BaseModel):
     age:int
     weight:float
     married:bool
-    allergies:List[str]
+    allergies:Optional[List[str]]=None
     contact_details:Dict[str,str]
 
 def insert_patient_data(patient:Patient):
